@@ -1,23 +1,45 @@
 import os
 
+
 def ls():
     print(os.listdir())
+
 
 def pwd():
     print(os.getcwd())
 
+
+def cd(directory):
+    try:
+        os.chdir(directory)
+    except FileNotFoundError:
+        print("Directory not found")
+
+
 commands = {
     "ls": ls,
-    "pwd": pwd
+    "pwd": pwd,
 }
 
 while True:
-    cmd = input(">> ")
+    cmd = input(">> ").strip()
 
     if cmd == "quit":
-        print("Leaving... ")
+        print("Exiting...")
         break
-    elif cmd in commands:
-        commands[cmd]()
+
+    parts = cmd.split()
+    command = parts[0]
+
+    if command in commands:
+        commands[command]()
+
+    elif command == "cd":
+        if len(parts) > 1:
+            cd(parts[1])
+        else:
+            print("Usage: cd <directory>")
+
     else:
-        print("Error: Command Does Not Exist")
+        print("Error: Command does not exist")
+
