@@ -16,6 +16,13 @@ def cd(directory):
         print("Directory not found")
 
 
+def mkdir(name):
+    os.mkdir(name)
+
+
+def rmdir(name):
+    os.rmdir(name)
+
 commands = {
     "ls": ls,
     "pwd": pwd,
@@ -40,6 +47,15 @@ while True:
         else:
             print("Usage: cd <directory>")
 
+    elif command == "mkdir":
+        if len(parts) > 1:
+            mkdir(parts[1])
+
+    elif command == "rmdir":
+        if len(parts) > 1:
+            rmdir(parts[1])
+
     else:
         print("Error: Command does not exist")
+
 

@@ -9,7 +9,7 @@ A terminal for Android phones
 - [x] Lists the items in the current directory
 - [x] Directory switching 
 
-## Como usar
+## How to use
 1. Clone the repository: `git clone https://github.com/Gab-ai565/Android-Terminal.git`
 3. Run: `python3 main.py`
 
