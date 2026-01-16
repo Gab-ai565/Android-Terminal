@@ -23,9 +23,20 @@ def mkdir(name):
 def rmdir(name):
     os.rmdir(name)
 
+
+def help():
+    print("""ls: show items in the directory
+pwd:  shows the directory 
+cd: change directory 
+mkdir: create directory
+rmdir: delete directory 
+quit: exit the programO
+""")
+
 commands = {
     "ls": ls,
     "pwd": pwd,
+    "help": help
 }
 
 while True:
